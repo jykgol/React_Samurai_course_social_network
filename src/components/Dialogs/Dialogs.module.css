@@ -1,0 +1,21 @@
+
+
+.dialog_window{
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    width: 100%;
+    height: 100%;
+}
+
+.dialog_items{
+    display: grid;
+    grid-template-rows: repeat(1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+.dialog_item{
+    padding: 0.5em 0.7em;
+    border: 1px solid black;
+    border-radius: 10px;
+}

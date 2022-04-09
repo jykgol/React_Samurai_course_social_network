@@ -1,0 +1,16 @@
+.Content{
+
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3%;
+
+    font-optical-sizing: auto;
+    
+}
+
+
+
+

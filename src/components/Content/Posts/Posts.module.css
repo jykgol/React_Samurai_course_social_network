@@ -1,0 +1,12 @@
+.posts{
+    display: flex;
+      background-color: var(--clr);
+    border: 1px solid black;
+    border-radius: 10px;
+    align-content: center;
+    flex-direction: column;
+    padding: 2%;
+    margin: 10px;
+} 
+
+

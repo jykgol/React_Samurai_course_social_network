@@ -1,0 +1,96 @@
+
+.icon img{
+    max-width: 25px;
+}
+
+.icon{
+    position: relative;
+    display: block;
+    column-width: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+}
+
+.activeLink, .item{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    font-weight: 500;
+    
+}
+
+.activeLink .icon {
+    transform: translateX(60px);
+}
+
+.activeLink .text, .item .text{
+    position: absolute;
+    color: var(--clr);
+    font-weight: 400;
+    font-size: 0.8em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+
+.activeLink .text{
+    opacity: 1;
+    transform: translateX(-10px);
+}
+
+.activeLink .indicator{
+    opacity: 1;
+}
+
+.item .indicator{
+    transform: translateX(20px);
+    width: 0;  
+} 
+
+.indicator{
+    transform: translateY(-2px);
+    opacity: 0;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: var(--clr);
+    right: -80%;
+    border-radius: 50%;
+    border: 6px solid var(--clr);
+    transition: 1s;
+    box-sizing: border-box;
+
+}
+
+.indicator::before{
+
+    content: "";
+    position: absolute;
+    right: 50%;
+    top: -22px;
+    width: 20px;
+    height: 20px;
+    /* background-color: red; */
+    border-bottom-right-radius: 25px;
+    box-shadow: 10px 1px 0 0 var(--clr);
+}
+
+.indicator::after{
+    content: "";
+    position: absolute;
+    right: 50%;
+    top: 60px;
+    width: 22px;
+    height: 20px;
+    /* background-color: red; */
+    border-top-right-radius: 25px;
+    box-shadow: 10px -1px 0 0 var(--clr);
+}
+

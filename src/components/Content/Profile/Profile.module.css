@@ -1,0 +1,32 @@
+.profile{
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows:max-content;
+    margin: 10px 0;
+} 
+.profile_img{
+    background-color: var(--clr);
+    border: 1px solid black;
+    border-radius: 10px;
+    align-content: center;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0 10px;
+}
+.profile_info{
+    background-color: var(--clr);
+    border: 1px solid black;
+    border-radius: 10px;
+    align-content: center;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.profile_img img{
+	width: 100%;
+	height: auto;
+}
+
+
+

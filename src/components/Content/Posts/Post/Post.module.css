@@ -1,0 +1,36 @@
+.post{
+    display: flex;
+    background-color: var(--clr);
+    border: 1px solid black;
+    border-radius: 10px;
+    align-content: center;
+    flex-direction: column;
+    margin-bottom: 2%;
+    padding: 2%;
+    gap: 10px;
+} 
+
+.post img{
+	max-width: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.postInfo{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.post .postLike{
+    display: flex;
+    justify-content: flex-end;
+    justify-items: flex-end;
+}
+
+.postContent{
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}

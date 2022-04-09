@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.app_wraper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+._content{
+    width: 100%;
+    padding-inline: 15px;
+    max-width: 1060px;
+    overflow: hidden;
+    align-self: center;
+}
+
+
+.app_wraper_content{
+    display: flex;
+}
+
+
