@@ -1,6 +1,6 @@
 .posts{
     display: flex;
-      background-color: var(--clr);
+    background-color: var(--clr);
     border: 1px solid black;
     border-radius: 10px;
     align-content: center;
@@ -8,5 +8,14 @@
     padding: 2%;
     margin: 10px;
 } 
+.newPostInput{
+  min-height: 1.5em;
+  max-height: fit-content;
+}
+.newPostTextArea{
+  resize:none;
+  outline: none;
+
+}
 
 

@@ -1,13 +1,19 @@
 .header{
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	width: 100%;
 	grid-area: h;
-    background-color:#b0b0e2;
-    border: 1px solid black;
-    border-radius: 10px;
-
+    background-color:white;
+	box-shadow: 0 0 3px #b0b0e2;
 }
-
+.header_content{
+	width: 100%;
+	max-width: 1060px;
+	padding-inline: 15px;
+    overflow: hidden;
+	display: flex;
+	align-items: center;
+}
 .header img{
 	padding: 3px 10px;
 	width: 100%;

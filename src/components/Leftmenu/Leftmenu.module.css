@@ -1,75 +1,36 @@
 
 :root{
     --clr4: #222327;
-    --clr2: rgb(113, 113, 207);
+    --clr2: #b0b0e2;
     --clr: #ffffff;
+    --clrBody: rgb(211, 211, 211);
 }
-
+ 
 .main_body{
-    display: flex;
-    justify-content:flex-start;
-    align-items:flex-start;
-    min-height: 150px;
-    max-height: 100%;
-    background: var(--clr);
-    box-sizing: border-box;
-    
+
+    width: 100%;
+    max-width: 10em;
+    min-width: fit-content;
+    height: 100%;
 }
 
 .navigation{
-    margin-right: 40px;
-    height: 450px;
-    max-height: auto;
-    width: 120px;
-    background: var(--clr2);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    
 }
 
 .navigation ul{
     display: flex;
     flex-direction: column;
-    /* margin-top: 40px; */
-    width: 70 px;
-    
+    gap: 0.05em;
 }
 .navigation ul li{
-    position: relative;
+    max-height: 2.5em;
     display: flex;
     justify-content: center;
     align-items: center;
-    list-style: none;
-    width: 80px;
-    height: 70px;
-    /* z-index: 1; */
-    
+    list-style: none;    
 }
 
+.navigation ul li>div{
+    width: 100%;
 
-
-.box_button{
-    visibility: hidden;
-    width:40px;
-    height: 40px;
-    position: absolute;
-    transform: translateX(15px) translateY(-50px);
-}
-
-@media (max-width: 550px){
-    .navigation{
-        visibility: visible;
-        position: absolute;
-    }
-    .box_button{
-        visibility: visible;
-
-    }
-    .box_button:active ~ .navigation {
-        visibility: hidden !important;
-    }
 }

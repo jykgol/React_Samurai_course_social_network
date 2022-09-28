@@ -22,8 +22,8 @@ function Posts(props) {
   return (
     <div className={s.posts}>
       <div className={s.postContent}>
-        <div><textarea ref={newPostElement} value={props.PostsPageData.newPostText} onChange={onPostChange} /></div>
-        <div><button onClick={addPost}>add post</button></div>
+        <div className={s.newPostInput}><textarea className={s.newPostTextArea} ref={newPostElement} value={props.PostsPageData.newPostText} onChange={onPostChange} /></div>
+        <div><button className={s.newPostButton} onClick={addPost}>add post</button></div>
       </div>
       <div>
          {PostsDataRestore}

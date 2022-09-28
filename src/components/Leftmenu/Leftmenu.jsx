@@ -15,9 +15,6 @@ function Leftmenu(props) {
           {NavbarDataRestore}                 
         </ul>
       </div>
-      <button className={s.box_button}>
-        click
-      </button>
     </div>
   );
 }

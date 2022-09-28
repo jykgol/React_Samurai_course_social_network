@@ -4,12 +4,19 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+body{
+    background-color: rgba(211, 211, 211, 0.266);
+}
 .app_wraper {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 5em;
 }
-
+.app_wraper_header{
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
 ._content{
     width: 100%;
     padding-inline: 15px;
@@ -20,7 +27,10 @@
 
 
 .app_wraper_content{
+    margin-top: 4em;
+    z-index: 1;
     display: flex;
+    gap: 0.4em;
 }
 
 

@@ -16,7 +16,7 @@ function App(props) {
     <BrowserRouter>
       <div className="page">
         <div className='app_wraper'>
-          <div className="_content">
+          <div className='app_wraper_header'>
             <Header />
           </div>
           <div className="app_wraper_content _content">
