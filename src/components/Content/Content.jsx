@@ -6,7 +6,7 @@ function Content(props) {
 
   return (
     <div className={s.Content}>
-      <Profile/>
+      <Profile ProfileData={props.ProfilePage.PostsPageData.ProfileData}/>
       <Posts PostsPageData={props.ProfilePage.PostsPageData} dispatch={props.dispatch}/>
       
     </div>

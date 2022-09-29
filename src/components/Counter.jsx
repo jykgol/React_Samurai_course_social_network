@@ -1,12 +1,17 @@
 import React from 'react';
+import { LikeCountOnChangeActionCreator } from '../Redux/ProfileReduser';
+const Reduse = "REDUCE";
+const Increase = "INCREASE";
+
 
 function Counter(props) {
-  
-    function Increment() {
-      props.dispatch({ type:"LIKE-COUNT-ON-CHANGE", change:"INCREASE", id: props.id});
+    function Increment(e) {
+      props.dispatch(LikeCountOnChangeActionCreator(Increase,props.id));
+      e.target.disabled=1;
     } 
-    function Decrement() {
-      props.dispatch({ type:"LIKE-COUNT-ON-CHANGE", change:"REDUCE", id: props.id});
+    function Decrement(e) {
+      props.dispatch(LikeCountOnChangeActionCreator(Reduse,props.id));
+      e.target.disabled=1;
     } 
     return (
       <div>

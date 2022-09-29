@@ -40,6 +40,7 @@
     background-color:rgba(211, 211, 211, 0.407);;
     font-size: 0.7em;
     transition: all 0.5s ease-out;
+    border: 0px;
 }
 .profile_button:hover{
     background-color: rgba(211, 211, 211, 0.927);
