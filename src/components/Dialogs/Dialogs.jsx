@@ -5,52 +5,53 @@ import { AddNewMessageActionCreator, NewMessageOnChangeActionCreator } from "../
 
 
 
+
 function Dialogs(props) {
 
-  let DialogsDataRestore = props.MessagesPage.DialogsData.map(el => {
-    return(
-      <div className={s.dialog_item}>
-      <NavLink to={"/messages/" + el.id}>{el.name}</NavLink>
-      </div>
-    )
-  })
-  let MessagesDataRestore = props.MessagesPage.MessagesData.map(el => {return(
-    <div className={s.message}>
-      {el.message}
-    </div>
-    )})
-  
-  let newMessage = React.createRef();
-  
-  let AddNewMessage = () => {
+    let DialogsDataRestore = props.MessagesPage.DialogsData.map(el => {
+        return (
+            <div className={s.dialog_item}>
+                <NavLink to={"/messages/" + el.id}>{el.name}</NavLink>
+            </div>
+        )
+    })
+    let MessagesDataRestore = props.MessagesPage.MessagesData.map(el => {
+        return (
+            <div className={s.message}>{el.message}</div>
+        )
+    })
 
-    props.dispatch(AddNewMessageActionCreator());
-  }
+    let newMessage = React.createRef();
 
-  let NewMessageOnChange = () => {
-    let newText = newMessage.current.value;
-    props.dispatch(NewMessageOnChangeActionCreator(newText));
-  }
+    let AddNewMessage = () => {
 
-  return (
-    <div className={s.dialog_window}>
-      <div className={s.dialog_items}>
-        {DialogsDataRestore}
-      </div>
+        props.dispatch(AddNewMessageActionCreator());
+    }
 
-      <div className={s.messages}>
-        {MessagesDataRestore}
-        <div>
-          <div>
-          <textarea ref={newMessage} value={props.MessagesPage.NewMessageText} onChange={NewMessageOnChange}/>
-          </div>
-          <div>
-          <button onClick={AddNewMessage}>send</button>   
-          </div> 
+    let NewMessageOnChange = () => {
+        let newText = newMessage.current.value;
+        props.dispatch(NewMessageOnChangeActionCreator(newText));
+    }
+
+    return (
+        <div className={s.dialog_window}>
+            <div className={s.dialog_items}>
+                {DialogsDataRestore}
+            </div>
+
+            <div className={s.messages}>
+                {MessagesDataRestore}
+                <div className={s.newMessageBox}>
+                    <div>
+                        <textarea ref={newMessage} value={props.MessagesPage.NewMessageText} onChange={NewMessageOnChange} />
+                    </div>
+                    <div>
+                        <button onClick={AddNewMessage}>send</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default Dialogs;

@@ -12,6 +12,9 @@ body{
     flex-direction: column;
     gap: 5em;
 }
+.app_wraper_main_content{
+    width: 100%;
+}   
 .app_wraper_header{
     position: fixed;
     width: 100%;
