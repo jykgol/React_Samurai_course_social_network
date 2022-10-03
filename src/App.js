@@ -2,7 +2,7 @@ import React from 'react';
 import Leftmenu from './components/Leftmenu/Leftmenu';
 import Header from './components/Header/Header';
 import Content from './components/Content/Content';
-import Dialogs from './components/Dialogs/Dialogs';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import News from './components/News/News';
 import Mysic from './components/Mysic/Mysic';
@@ -24,7 +24,7 @@ function App(props) {
             <div className='app_wraper_main_content'>
               <Routes>
                 <Route path="/" element={<Content ProfilePage={props.state.ProfilePage} dispatch={props.dispatch} />} />
-                <Route path="/messages/*" element={<Dialogs MessagesPage={props.state.MessagesPage} dispatch={props.dispatch} />} />
+                <Route path="/messages/*" element={<DialogsContainer MessagesPage={props.state.MessagesPage} dispatch={props.dispatch} />} />
                 <Route path="/news" element={<News />} />
                 <Route path="/mysic" element={<Mysic />} />
                 <Route path="/settings" element={<Settings />} />

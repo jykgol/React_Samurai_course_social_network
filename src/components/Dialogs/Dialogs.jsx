@@ -1,10 +1,6 @@
 import { NavLink } from "react-router-dom";
 import s from "./Dialogs.module.css"
 import React from "react";
-import { AddNewMessageActionCreator,NewMessageOnChangeActionCreator} from "../../Redux/MessagesReduser";
-
-
-
 
 function Dialogs(props) {
 
@@ -21,14 +17,13 @@ function Dialogs(props) {
         )
     })
 
-    let AddNewMessage = () => {
-
-        props.dispatch(AddNewMessageActionCreator());
+    let onAddNewMessage = () => {
+        props.AddNewMessage();
     }
 
-    let NewMessageOnChange = (e) => {
+    let onNewMessageOnChange = (e) => {
         let newText = e.target.value;
-        props.dispatch(NewMessageOnChangeActionCreator(newText));
+        props.NewMessageOnChange(newText);
     }
 
     return (
@@ -41,10 +36,10 @@ function Dialogs(props) {
                 {MessagesDataRestore}
                 <div className={s.newMessageBox}>
                     <div>
-                        <textarea value={props.MessagesPage.NewMessageText} onChange={NewMessageOnChange} />
+                        <textarea value={props.MessagesPage.NewMessageText} onChange={onNewMessageOnChange} />
                     </div>
                     <div>
-                        <button onClick={AddNewMessage}>send</button>
+                        <button onClick={onAddNewMessage}>send</button>
                     </div>
                 </div>
             </div>
