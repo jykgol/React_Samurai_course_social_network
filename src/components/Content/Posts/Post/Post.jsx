@@ -1,8 +1,25 @@
 import s from "./Post.module.css"
-import Counter from "./../../../Counter"
 
 function Post(props) {
  
+  let OnIncrement = () => {
+    props.Increment(props.id);
+  } 
+  let OnDecrement = () => {
+    props.Decrement(props.id);
+  } 
+
+  let disableCheck = (disabled) => {
+    let dis=0;
+    if (!disabled){
+      dis = {inc:false, dec:true};
+    }
+    else{
+      dis = {inc:true, dec:false};
+    }
+    return dis;
+  };
+
   return (
     <div className={s.post}>
       <div className={s.postInfo}>
@@ -13,7 +30,9 @@ function Post(props) {
         {props.text}
       </div>
       <div className={s.postLike}>
-        <Counter dispatch={props.dispatch} id={props.id} like_count={props.like_count} />
+        <h3>Лайков {props.like_count}</h3>
+        <button hidden={disableCheck(props.liked).inc} onClick={OnIncrement}>Like</button>
+        <button hidden={disableCheck(props.liked).dec} onClick={OnDecrement}>Unlike</button>
       </div>
     </div>
   );

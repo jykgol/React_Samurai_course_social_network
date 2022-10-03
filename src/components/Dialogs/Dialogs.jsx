@@ -21,8 +21,6 @@ function Dialogs(props) {
         )
     })
 
-    let newMessage = React.createRef();
-
     let AddNewMessage = () => {
 
         props.dispatch(AddNewMessageActionCreator());

@@ -1,5 +1,5 @@
 import s from "./Content.module.css"
-import Posts from "./Posts/Posts";
+import PostsContainer from "./Posts/PostsContainer";
 import Profile from "./Profile/Profile";
 
 function Content(props) {
@@ -7,7 +7,7 @@ function Content(props) {
   return (
     <div className={s.Content}>
       <Profile ProfileData={props.ProfilePage.PostsPageData.ProfileData}/>
-      <Posts PostsPageData={props.ProfilePage.PostsPageData} dispatch={props.dispatch}/>
+      <PostsContainer PostsPageData={props.ProfilePage.PostsPageData} dispatch={props.dispatch}/>
       
     </div>
   );

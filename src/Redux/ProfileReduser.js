@@ -7,8 +7,8 @@ const Increase = "INCREASE";
 let initialstate = {
     PostsPageData: {
         PostsData: [
-            { id: 1, like_count: 78, text: "У Фрэнка опять проблемы: он проспорил довольно крупную сумму денег, в результате чего Лиама берут в заложники. Галлагерам придется постараться, чтобы выкупить брата.", imgSrc: "https://cdn-icons-png.flaticon.com/512/235/235355.png", author: "Koala San" },
-            { id: 2, like_count: 2, text: "post nahoooi", imgSrc: "https://cdn-icons-png.flaticon.com/512/235/235355.png", author: "Koala San" },
+            { id: 0, like_count: 78, liked:false, text: "У Фрэнка опять проблемы: он проспорил довольно крупную сумму денег, в результате чего Лиама берут в заложники. Галлагерам придется постараться, чтобы выкупить брата.", imgSrc: "https://cdn-icons-png.flaticon.com/512/235/235355.png", author: "Koala San" },
+            { id: 1, like_count: 2, liked:true, text: "post nahoooi", imgSrc: "https://cdn-icons-png.flaticon.com/512/235/235355.png", author: "Koala San" },
         ],
         newPostText: "New text is waiting for you",
         ProfileData:{
@@ -22,8 +22,9 @@ const ProfileReduser = (state = initialstate, action) => {
     switch(action.type){
         case AddPost:
             let newPost = {
-                id: state.PostsPageData.PostsData.length + 1,
+                id: state.PostsPageData.PostsData.length,
                 text: state.PostsPageData.newPostText,
+                liked:false,
                 like_count: 0,
                 author: "Koala San",
                 imgSrc: "https://cdn-icons-png.flaticon.com/512/235/235355.png"
@@ -32,15 +33,14 @@ const ProfileReduser = (state = initialstate, action) => {
             state.PostsPageData.PostsData.push(newPost);
             return state;
         case NewPostOnchange:
-            debugger;
             state.PostsPageData.newPostText = action.newText;
             return state;
         case LikeCountOnChange:
             if (action.change === Increase) {
-                state.PostsPageData.PostsData.map(el => { if (el.id === action.id) { el.like_count += 1;}})
+                state.PostsPageData.PostsData.map(el => { if (el.id === action.id) { el.like_count += 1; el.liked=!el.liked}})
             }
             else if (action.change === Reduse) {
-                state.PostsPageData.PostsData.map(el => { if (el.id === action.id) { el.like_count -= 1;}})
+                state.PostsPageData.PostsData.map(el => { if (el.id === action.id) { el.like_count -= 1; el.liked=!el.liked}})
             }
             return state;
         default:
