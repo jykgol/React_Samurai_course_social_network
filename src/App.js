@@ -1,10 +1,10 @@
 import React from 'react';
-import Leftmenu from './components/Leftmenu/Leftmenu';
 import Header from './components/Header/Header';
 import Content from './components/Content/Content';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import News from './components/News/News';
+import LeftmenuContainer from './components/Leftmenu/LeftmenuContainer';
 import Mysic from './components/Mysic/Mysic';
 import Settings from './components/Settings/Settings';
 import "./styles/App.css"
@@ -13,28 +13,25 @@ import "./styles/App.css"
 function App(props) {
 
   return (
-    <BrowserRouter>
       <div className="page">
         <div className='app_wraper'>
           <div className='app_wraper_header'>
             <Header />
           </div>
           <div className="app_wraper_content _content">
-            <Leftmenu LeftmenuPage={props.state.LeftmenuPage} />
+            <LeftmenuContainer/>
             <div className='app_wraper_main_content'>
               <Routes>
-                <Route path="/" element={<Content ProfilePage={props.state.ProfilePage} dispatch={props.dispatch} />} />
-                <Route path="/messages/*" element={<DialogsContainer MessagesPage={props.state.MessagesPage} dispatch={props.dispatch} />} />
+                <Route path="/" element={<Content/>} />
+                <Route path="/messages/*" element={<DialogsContainer/>} />
                 <Route path="/news" element={<News />} />
                 <Route path="/mysic" element={<Mysic />} />
                 <Route path="/settings" element={<Settings />} />
               </Routes>
             </div>
           </div>
-
         </div>
       </div>
-    </BrowserRouter>
   );
 }
 
