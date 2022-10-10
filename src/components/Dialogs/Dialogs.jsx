@@ -6,14 +6,14 @@ function Dialogs(props) {
 
     let DialogsDataRestore = props.MessagesPage.DialogsData.map(el => {
         return (
-            <div className={s.dialog_item}>
+            <div key={el.id} className={s.dialog_item}>
                 <NavLink to={"/messages/" + el.id}>{el.name}</NavLink>
             </div>
         )
     })
     let MessagesDataRestore = props.MessagesPage.MessagesData.map(el => {
         return (
-            <div className={s.message}>{el.message}</div>
+            <div key={el.id} className={s.message}>{el.message}</div>
         )
     })
 

@@ -4,8 +4,8 @@ import LeftmenuItem from "./Leftmenu_item/LeftmenuItem";
 function Leftmenu(props) {
     let NavbarDataRestore = props.NavbarData.map(el => {
         return (
-            <li>
-                <LeftmenuItem navLink_to={el.navLink_to} text={el.text} img_src={el.img_src}></LeftmenuItem>
+            <li key={el.id}>
+                <LeftmenuItem  navLink_to={el.navLink_to} text={el.text} img_src={el.img_src}/>
             </li>
         )
     })

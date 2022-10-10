@@ -1,18 +1,17 @@
-import StoreContext from "../../../StoreContext";
+import { connect } from "react-redux";
 import Profile from "./Profile";
 
 
-function ProfileContainer(props) {
-
-  return (
-    <StoreContext.Consumer>
-      { store => {
-          let state = store.getState();
-          return (<Profile ProfileImage={state.ProfilePage.PostsPageData.ProfileData.ProfileImage}/>)
-        }
-      }
-    </StoreContext.Consumer>
-  )
+let mapStateToProps = (state) => {
+  return {
+    ProfileImage: state.ProfilePage.PostsPageData.ProfileData.ProfileImage
+  }
 }
+let mapDispatchToProps = (dispatch) => {
+  return {
+
+  }
+}
+const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile)
 
 export default ProfileContainer;

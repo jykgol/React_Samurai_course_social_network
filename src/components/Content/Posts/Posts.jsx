@@ -17,7 +17,7 @@ function Posts(props) {
     let onDecrement = (id) => {
         props.Decrement(id);
     }
-    let PostsDataRestore = props.PostsData.map(el => <Post Increment={onIncrement} Decrement={onDecrement} liked={el.liked} id={el.id} like_count={el.like_count} text={el.text} imgSrc={el.imgSrc} author={el.author} />)
+    let PostsDataRestore = props.PostsData.map(el => <Post key={el.id} Increment={onIncrement} Decrement={onDecrement} liked={el.liked} id={el.id} like_count={el.like_count} text={el.text} imgSrc={el.imgSrc} author={el.author} />)
 
     return (
         <div className={s.posts}>

@@ -1,17 +1,16 @@
-import StoreContext from "../../StoreContext";
+import { connect } from "react-redux";
 import Leftmenu from "./Leftmenu";
 
-function LeftmenuContainer(props) {
-
-  return (
-    <StoreContext.Consumer>
-      { store => {
-          let state = store.getState();
-          return (<Leftmenu NavbarData={state.LeftmenuPage.NavbarData} />)
-        }
-      }
-    </StoreContext.Consumer>
-  )
+let mapStateToProps = (state) => {
+    return {
+        NavbarData: state.LeftmenuPage.NavbarData,
+    }
 }
+let mapDispatchToProps = (dispatch) => {
+    return {
+
+    }
+}
+const LeftmenuContainer = connect(mapStateToProps, mapDispatchToProps)(Leftmenu);
 
 export default LeftmenuContainer;

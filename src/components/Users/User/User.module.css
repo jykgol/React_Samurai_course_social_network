@@ -1,0 +1,36 @@
+
+
+.User{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+
+}
+
+.UserLeft{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+.UserLeftImg{
+    width: 5rem;
+    border-radius: 50%;
+}
+
+.UserRight{
+    height: 70%;
+    border: 3px solid var(--clr2);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+.UserRightL{
+    margin: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

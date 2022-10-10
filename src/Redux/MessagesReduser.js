@@ -20,19 +20,24 @@ let initialstate = {
 };
 
 const MessagesReduser = (state = initialstate, action) => {
+
     switch (action.type) {
-        case NewMessageOnChange:
-            state.NewMessageText = action.newText;
-            return state;
-        case AddNewMessage:
-            let text = state.NewMessageText;
+        case NewMessageOnChange: {
+            let stateCopy = { ...state };
+            stateCopy.NewMessageText = action.newText;
+            return stateCopy;
+        }
+        case AddNewMessage: {
+            let stateCopy = { ...state };
+            let text = stateCopy.NewMessageText;
             let newMessage = {
-                id: state.MessagesData.length + 1,
+                id: stateCopy.MessagesData.length + 1,
                 message: text,
             }
-            state.MessagesData.push(newMessage);
-            state.NewMessageText = '';
-            return state;
+            stateCopy.MessagesData = [ ...state.MessagesData,newMessage];
+            stateCopy.NewMessageText = '';
+            return stateCopy;
+        }
         default:
             return state;
     }

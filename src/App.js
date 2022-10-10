@@ -8,6 +8,7 @@ import LeftmenuContainer from './components/Leftmenu/LeftmenuContainer';
 import Mysic from './components/Mysic/Mysic';
 import Settings from './components/Settings/Settings';
 import "./styles/App.css"
+import UsersContainer from './components/Users/UsersContainer';
 
 
 function App(props) {
@@ -27,6 +28,7 @@ function App(props) {
                 <Route path="/news" element={<News />} />
                 <Route path="/mysic" element={<Mysic />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="/users" element={<UsersContainer/>} />
               </Routes>
             </div>
           </div>
