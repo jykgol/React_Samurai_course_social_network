@@ -1,12 +1,14 @@
 .posts{
     display: flex;
+    gap: 1rem;
+    width: 100%;
     background-color: var(--clr);
-    border: 1px solid black;
+    box-shadow: 0 0 2px var(--clr2);
     border-radius: 10px;
-    align-content: center;
     flex-direction: column;
     padding: 2%;
-    margin: 10px;
+    margin-top: 2%;
+    
 } 
 .newPostInput{
   min-height: 1.5em;
@@ -15,7 +17,6 @@
 .newPostTextArea{
   resize:none;
   outline: none;
-
 }
 
 

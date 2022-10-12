@@ -7,14 +7,8 @@
 }
  
 .main_body{
-
-    width: 100%;
-    max-width: 10em;
-    min-width: fit-content;
-    height: 100%;
-}
-
-.navigation{
+    width: 10em;
+    height: fit-content;
 }
 
 .navigation ul{
@@ -32,5 +26,4 @@
 
 .navigation ul li>div{
     width: 100%;
-
 }

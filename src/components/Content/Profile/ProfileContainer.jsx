@@ -4,7 +4,7 @@ import Profile from "./Profile";
 
 let mapStateToProps = (state) => {
   return {
-    ProfileImage: state.ProfilePage.PostsPageData.ProfileData.ProfileImage
+    ProfileData: state.ProfilePage.PostsPageData.ProfileData
   }
 }
 let mapDispatchToProps = (dispatch) => {

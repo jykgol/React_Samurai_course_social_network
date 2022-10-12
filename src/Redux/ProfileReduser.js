@@ -1,6 +1,7 @@
 const AddPost = "ADD-POST";
 const NewPostOnchange = "NEW-POST-TEXT-ON-CHANGE";
 const LikeCountOnChange = "LIKE-COUNT-ON-CHANGE";
+const SetImage = "SET-IMAGE";
 const Reduse = "REDUCE";
 const Increase = "INCREASE";
 
@@ -13,6 +14,7 @@ let initialstate = {
         newPostText: "New text is waiting for you",
         ProfileData: {
             ProfileImage: "https://sun9-82.userapi.com/impg/yoNEV77YAGNbEnggrxM2azysdivaE7r2avPB7Q/HIlFUm5Hvyg.jpg?size=863x1080&quality=95&sign=3d0862e05fc06275ab8999115c4162de&type=album",
+            Visible: true,
         }
     }
 };
@@ -71,6 +73,17 @@ const ProfileReduser = (state = initialstate, action) => {
             }
             return stateCopy;
         }
+
+        case SetImage: {
+            return {
+                ...state, PostsPageData:
+                {
+                    ...state.PostsPageData, ProfileData:
+                        { ...state.PostsPageData.ProfileData, ProfileImage: action.newImgUrl }
+                },
+            }
+        }
+
         default:
             return state;
     }
@@ -79,4 +92,5 @@ const ProfileReduser = (state = initialstate, action) => {
 export let addPostActionCreator = () => ({ type: AddPost })
 export let newPostOnChangeActionCreator = (newText) => ({ type: NewPostOnchange, newText: newText })
 export let LikeCountOnChangeActionCreator = (change, id) => ({ type: LikeCountOnChange, change: change, id: id })
+export let SetImageActionCreator = (newImgUrl) => ({ type: SetImage, newImgUrl })
 export default ProfileReduser;
