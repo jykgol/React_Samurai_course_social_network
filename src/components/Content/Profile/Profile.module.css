@@ -1,9 +1,9 @@
-.profile{
+.profile {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     gap: 1%;
-} 
+}
 
 @media (min-width: 860px) {
     .profile_img {
@@ -11,11 +11,12 @@
         max-width: 25%;
         order: 1;
     }
+
     .profile_info {
         flex: 0 0 74%;
         max-width: 74%;
         order: 2;
-    }       
+    }
 }
 
 @media (min-width: 650px) {
@@ -24,17 +25,20 @@
         max-width: 35%;
         order: 1;
     }
+
     .profile_info {
         flex: 0 0 64%;
         max-width: 64%;
         order: 2;
         margin-top: 0 !important;
     }
-    .profile_img_box{
+
+    .profile_img_box {
         width: 90% !important;
-    }       
+    }
 }
-.profile_img{
+
+.profile_img {
     background-color: var(--clr);
     box-shadow: 0 0 2px var(--clr2);
     border-radius: 0.5em;
@@ -46,7 +50,8 @@
     min-height: 1px;
     width: 100%;
 }
-.profile_info{
+
+.profile_info {
     background-color: var(--clr);
     box-shadow: 0 0 2px var(--clr2);
     border-radius: 0.5em;
@@ -54,23 +59,27 @@
     flex-direction: column;
     padding: 0.4em;
     width: 100%;
-    min-height: 12rem; 
+    min-height: 12rem;
     margin-top: 2%;
 }
-.profile_img_box{
+
+.profile_img_box {
     width: 70%;
     aspect-ratio: 1;
     overflow: hidden;
     border-radius: 50%;
 }
-.profile_img_box img{
+
+.profile_img_box img {
     width: 100%;
 }
-.profile_button{
+
+.profile_button {
 
     padding: 0.35rem 1rem;
     border-radius: 0.7rem;
-    background-color:rgba(211, 211, 211, 0.407);;
+    background-color: rgba(211, 211, 211, 0.407);
+    ;
     font-size: 0.9rem;
     transition: all 0.5s ease-out;
     border: 0px;
@@ -78,11 +87,11 @@
     min-width: fit-content;
 }
 
-.profile_button:hover{
+.profile_button:hover {
     background-color: rgba(211, 211, 211, 0.927);
 }
 
-.profile_info_content{
+.profile_info_content {
     height: 100%;
     padding: 0.35em 1em;
     display: flex;
@@ -90,13 +99,44 @@
     justify-content: space-around;
     align-items: flex-start;
 }
-.profile_info_content>div{
+
+.profile_info_content>div {
     display: flex;
     height: 100%;
     width: 100%;
     justify-content: center;
     align-items: center;
 }
-.profile_info_content>div:not(:last-child){
+
+.profile_info_content>div:not(:last-child) {
     border-bottom: 1px solid var(--clrBody);
+}
+
+.profile_content {
+    margin-top: 2%;
+    background-color: var(--clr);
+    box-shadow: 0 0 2px var(--clr2);
+    border-radius: 0.5em;
+}
+
+.content_container {
+    display: flex;
+    padding: 1%;
+    gap: 1%;
+    align-items: center;
+}
+
+.content_photos {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 24%;
+    gap: 1%;
+    overflow: hidden;
+    transition: all ease-out 2s;
+}
+
+.image_container img {
+    block-size: auto;
+    max-inline-size: 100%;
 }

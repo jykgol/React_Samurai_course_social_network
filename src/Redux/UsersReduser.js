@@ -39,7 +39,6 @@ const UsersReduser = (state = initialstate, action) => {
                 })
 
         case (setUsers):
-            debugger
             return (
                 { ...state, UsersData: [...state.UsersData, ...action.usersData] }
             )

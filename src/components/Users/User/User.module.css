@@ -4,6 +4,10 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 5fr;
+    background-color: var(--clr);
+    box-shadow: 0 0 2px var(--clr2);
+    border-radius: 10px;
+    padding: 1%;
 
 }
 
@@ -26,6 +30,7 @@
     display: flex;
     justify-content: space-between;
     align-items:center;
+    align-self: center;
 }
 .UserRightL{
     margin: 2rem;
@@ -33,4 +38,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.UserLeft button{
+    padding-inline: 5%;
+    padding-block: 1%;
+    border: 3px solid var(--clr2);
+    border-radius: 0.5rem;
 }
