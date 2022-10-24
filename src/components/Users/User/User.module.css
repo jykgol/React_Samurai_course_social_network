@@ -1,48 +1,53 @@
-
-
 .User{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 5fr;
+    flex: 1 0 20%;
+    min-width: 10em;
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
     background-color: var(--clr);
     box-shadow: 0 0 2px var(--clr2);
-    border-radius: 10px;
-    padding: 1%;
+    border-radius: 0.5em;
 
+    margin-top: 2%;
+    overflow: hidden;
 }
 
-.UserLeft{
+.UserTop{
+    padding-top: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:1rem;
+    gap:0.5em;
 }
-.UserLeftImg{
-    width: 5rem;
+.UserTopImg{
+    width: 6rem;
     border-radius: 50%;
 }
 
-.UserRight{
-    height: 70%;
-    border: 3px solid var(--clr2);
-    border-radius: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    align-self: center;
-}
-.UserRightL{
-    margin: 2rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.UserLeft button{
+.UserTop button{
     padding-inline: 5%;
     padding-block: 1%;
     border: 3px solid var(--clr2);
     border-radius: 0.5rem;
 }
+
+.UserInfo{
+    
+    background-color:rgba(0, 0, 0, 0.08);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    align-self: center;
+
+    padding: 0.5em 1em;
+}
+.UserInfoName, .UserInfoStatus{
+    word-wrap: break-word;
+}
+

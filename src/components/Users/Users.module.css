@@ -1,7 +1,40 @@
-.Users{
+.UsersPage{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: fit-content;
     gap: 1.5rem;
 }
+
+.Users{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2%;
+    width: 100%;
+    margin-bottom: 5em;
+}
+
+.pagination{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap:0.3em;
+}
+
+.pagination > * {
+    padding: 4px 8px;
+    border-radius: 0.7em;
+    border: 0px;
+    transition: all ease-out 200ms;
+    font-size: medium;
+}
+
+.pagination > *:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+.pag_dots:hover{
+    background-color: transparent;
+}
+.pag_current_page{
+    background-color: rgba(0, 0, 0, 0.12);}
