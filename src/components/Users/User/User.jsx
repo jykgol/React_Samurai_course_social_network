@@ -11,8 +11,8 @@ let User = (props) => {
                     : <button onClick={() => { props.follow(props.id) }}>Follow</button>}
             </div>
             <div className={s.UserInfo}>
-                <div className={s.UserInfoName}>Name: {props.name}</div>
-                <div className={s.UserInfoStatus}>Status: {props.status}</div>
+                <div className={s.UserInfoName}>Name: <span className={s.UserInfoNameText}>{props.name}</span></div>
+                <div className={s.UserInfoStatus}>Status: <span className={s.UserInfoStatusText}>{props.status}</span></div>
             </div>
         </div>
     )
