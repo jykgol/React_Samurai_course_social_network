@@ -10,7 +10,7 @@ function Leftmenu(props) {
         )
     })
     return (
-        <div className={s.main_body}>
+        <div className={s.main_body} >
             <div className={s.navigation}>
                 <ul>
                     {NavbarDataRestore}
