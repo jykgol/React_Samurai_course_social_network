@@ -1,21 +1,23 @@
-const follow = 'Follow';
-const unFollow = 'UnFollow';
-const setUsers = 'setUsers';
-const setCurrentPage = 'setCurrentPage';
-const setTotalUsers = 'setTotalUsers';
+const followCase = 'followCase';
+const unFollowCase = 'unFollowCase';
+const setUsersCase = 'setUsersCase';
+const setCurrentPageCase = 'setCurrentPageCase';
+const setTotalUsersCase = 'setTotalUsersCase';
+const toggleIsFetchingCase = 'toggleIsFetchingCase';
 
 let initialstate = {
     UsersData: [],
     PageSize: 12,
     TotalUsers: 78,
     CurrentPage: 1,
+    isFetching: true,
 };
 
 const UsersReduser = (state = initialstate, action) => {
 
     switch (action.type) {
 
-        case (follow):
+        case (followCase):
             return (
                 {
                     ...state,
@@ -29,7 +31,7 @@ const UsersReduser = (state = initialstate, action) => {
                     )
                 });
 
-        case (unFollow):
+        case (unFollowCase):
             return (
                 {
                     ...state,
@@ -43,19 +45,23 @@ const UsersReduser = (state = initialstate, action) => {
                     )
                 })
 
-        case (setUsers):
+        case (setUsersCase):
             return (
                 { ...state, UsersData: [...action.usersData] }
             )
-        case (setCurrentPage):
+        case (setCurrentPageCase):
             return (
                 { ...state, CurrentPage: action.page }
             )
-        case (setTotalUsers):
+        case (setTotalUsersCase):
             return (
                 { ...state, TotalUsers: action.TotalUsers }
             )
-
+        case (toggleIsFetchingCase):
+            return (
+                { ...state, isFetching: action.isFetching}
+            )
+                
         default: return state;
 
     }
@@ -63,10 +69,11 @@ const UsersReduser = (state = initialstate, action) => {
 
 }
 
-export const followAC = (userId) => ({ type: follow, userId });
-export const unFollowAC = (userId) => ({ type: unFollow, userId });
-export const setUsersAC = (usersData) => ({ type: setUsers, usersData });
-export const setCurrentPageAC = (page) => ({ type: setCurrentPage, page });
-export const setTotalUsersAC = (TotalUsers) => ({ type: setTotalUsers, TotalUsers });
+export const follow = (userId) => ({ type: followCase, userId });
+export const unFollow = (userId) => ({ type: unFollowCase, userId });
+export const setUsers = (usersData) => ({ type: setUsersCase, usersData });
+export const setCurrentPage = (page) => ({ type: setCurrentPageCase, page });
+export const setTotalUsers = (TotalUsers) => ({ type: setTotalUsersCase, TotalUsers });
+export const toggleIsFetching = (isFetching) => ({ type: toggleIsFetchingCase, isFetching });
 
 export default UsersReduser;

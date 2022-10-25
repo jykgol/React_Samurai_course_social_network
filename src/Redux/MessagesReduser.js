@@ -1,5 +1,5 @@
-const AddNewMessage = "ADD-NEW-MESSAGE";
-const NewMessageOnChange = "NEW-MESSAGE-ON-CHANGE";
+const AddNewMessageCase = "AddNewMessageCase";
+const NewMessageOnChangeCase = "NewMessageOnChangeCase";
 
 let initialstate = {
     NewMessageText: "Empty",
@@ -22,12 +22,12 @@ let initialstate = {
 const MessagesReduser = (state = initialstate, action) => {
 
     switch (action.type) {
-        case NewMessageOnChange: {
+        case AddNewMessageCase: {
             let stateCopy = { ...state };
             stateCopy.NewMessageText = action.newText;
             return stateCopy;
         }
-        case AddNewMessage: {
+        case NewMessageOnChangeCase: {
             let stateCopy = { ...state };
             let text = stateCopy.NewMessageText;
             let newMessage = {
@@ -44,6 +44,6 @@ const MessagesReduser = (state = initialstate, action) => {
 }
 
 
-export let AddNewMessageActionCreator = () => ({ type: AddNewMessage })
-export let NewMessageOnChangeActionCreator = (newText) => ({ type: NewMessageOnChange, newText: newText })
+export let AddNewMessage = () => ({ type: AddNewMessageCase })
+export let NewMessageOnChange = (newText) => ({ type: NewMessageOnChangeCase, newText: newText })
 export default MessagesReduser;

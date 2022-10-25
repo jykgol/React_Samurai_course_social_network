@@ -1,4 +1,7 @@
+const IsHiddenMenuSetCase = "IsHiddenMenuSet";
+
 let initialstate = {
+    isHiddenMenu: false,
     NavbarData: [
         { id: 1, navLink_to: "/", text: "Profile", img_src: "https://cdn-icons-png.flaticon.com/512/1077/1077063.png" },
         { id: 2, navLink_to: "/users", text: "Users", img_src: "https://cdn-icons-png.flaticon.com/512/1500/1500455.png" },
@@ -12,7 +15,17 @@ let initialstate = {
 
 const LeftMenuReduser = (state = initialstate, action) => {
 
-    return state;
+    switch (action.type){
+
+        case (IsHiddenMenuSetCase): {
+            return {...state, isHiddenMenu: !state.isHiddenMenu}
+        }
+
+        default: return state;
+    }
+
 }
 
 export default LeftMenuReduser;
+
+export const IsHiddenMenuSet = () => ({type: IsHiddenMenuSetCase});
