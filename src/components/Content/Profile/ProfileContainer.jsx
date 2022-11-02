@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { PhotoStartOnChangeActionCreator } from "../../../Redux/ProfileReduser";
+import { PhotoStartOnChange } from "../../../Redux/ProfileReduser";
 import Profile from "./Profile";
 const Reduse = "REDUCE";
 const Increase = "INCREASE";
@@ -13,10 +13,10 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     IncreaseButton: () => {
-      dispatch(PhotoStartOnChangeActionCreator(Increase));
+      dispatch(PhotoStartOnChange(Increase));
     },
     ReduceButton: () => {
-      dispatch(PhotoStartOnChangeActionCreator(Reduse));
+      dispatch(PhotoStartOnChange(Reduse));
     }
 
   }

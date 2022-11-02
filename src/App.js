@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/Header/Header";
-import Content from "./components/Content/Content";
+import ContentContainer from "./components/Content/ContentContainer";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import { Route, Routes } from "react-router-dom";
 import News from "./components/News/News";
@@ -25,7 +25,7 @@ function App(props) {
                     </div>
                     <div className="app_wraper_main_content">
                         <Routes>
-                            <Route path="/" element={<Content />} />
+                            <Route path="/profile/*" element={<ContentContainer />} />
                             <Route path="/messages/*" element={<DialogsContainer />} />
                             <Route path="/news" element={<News />} />
                             <Route path="/mysic" element={<Mysic />} />

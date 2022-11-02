@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import s from "./User.module.css"
 
 
@@ -5,7 +6,9 @@ let User = (props) => {
     return (
         <div className={s.User}>
             <div className={s.UserTop}>
-                <img className={s.UserTopImg} alt="no img(" src={props.img}></img>
+                <NavLink to={'/profile/' + props.id}>
+                    <img className={s.UserTopImg} alt="no img(" src={props.img}></img>
+                </NavLink>
                 {props.followed ?
                     <button onClick={() => { props.unFollow(props.id) }}>Unfollow</button>
                     : <button onClick={() => { props.follow(props.id) }}>Follow</button>}

@@ -1,10 +1,15 @@
+import checkPNG from "./../assets/images/check.png" 
+import noPNG from "./../assets/images/no.png" 
+
+
 const AddPost = "ADD-POST";
 const NewPostOnchange = "NEW-POST-TEXT-ON-CHANGE";
 const LikeCountOnChange = "LIKE-COUNT-ON-CHANGE";
 const SetImage = "SET-IMAGE";
 const Reduse = "REDUCE";
 const Increase = "INCREASE";
-const PhotosStartOnChange = "PHOTO-START-ON-CHANGE";
+const PhotosStartOnChangeCase = "PHOTO-START-ON-CHANGE";
+const setUserProfileOnChange = "setUserProfileOnChange";
 
 
 let initialstate = {
@@ -15,9 +20,9 @@ let initialstate = {
         ],
         newPostText: "New text is waiting for you"
     },
+    ProfileServerData: null,
     ProfileData: {
         ProfileImage: "https://sun9-82.userapi.com/impg/yoNEV77YAGNbEnggrxM2azysdivaE7r2avPB7Q/HIlFUm5Hvyg.jpg?size=863x1080&quality=95&sign=3d0862e05fc06275ab8999115c4162de&type=album",
-        Visible: true,
         PhotosStart: 0,
         Photos: [
             { id: 0, src: "https://images.unsplash.com/photo-1641353989082-9b15fa661805?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzM5ODcyOA&ixlib=rb-1.2.1&q=80&w=400" },
@@ -29,7 +34,11 @@ let initialstate = {
             { id: 6, src: "https://images.unsplash.com/photo-1641353989082-9b15fa661805?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzM5ODcyOA&ixlib=rb-1.2.1&q=80&w=400" },
             { id: 7, src: "https://images.unsplash.com/photo-1641353989082-9b15fa661805?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzM5ODcyOA&ixlib=rb-1.2.1&q=80&w=400" },
             { id: 8, src: "https://images.unsplash.com/photo-1641841344411-49dbd02896f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzM5ODcyOA&ixlib=rb-1.2.1&q=80&w=400" },
-        ]
+        ],
+        Icons: {
+            checkPNG,
+            noPNG
+        }
     }
 };
 
@@ -95,7 +104,7 @@ const ProfileReduser = (state = initialstate, action) => {
             }
         }
 
-        case PhotosStartOnChange: {
+        case PhotosStartOnChangeCase: {
             stateCopy = { ...state, ProfileData: { ...state.ProfileData } };
 
             if (action.change === Increase) {
@@ -111,6 +120,13 @@ const ProfileReduser = (state = initialstate, action) => {
             return stateCopy;
         }
 
+        case setUserProfileOnChange: {
+            return stateCopy = {...state, 
+                ProfileServerData: {...action.ProfileInfo},
+            };
+
+        }
+
         default:
             return state;
     }
@@ -119,6 +135,7 @@ const ProfileReduser = (state = initialstate, action) => {
 export let addPostActionCreator = () => ({ type: AddPost })
 export let newPostOnChangeActionCreator = (newText) => ({ type: NewPostOnchange, newText: newText })
 export let LikeCountOnChangeActionCreator = (change, id) => ({ type: LikeCountOnChange, change: change, id: id })
-export let PhotoStartOnChangeActionCreator = (change) => ({ type: PhotosStartOnChange, change })
+export let PhotoStartOnChange = (change) => ({ type: PhotosStartOnChangeCase, change })
 export let SetImageActionCreator = (newImgUrl) => ({ type: SetImage, newImgUrl })
+export let setUserProfile = (ProfileInfo) => ({ type: setUserProfileOnChange, ProfileInfo })
 export default ProfileReduser;
